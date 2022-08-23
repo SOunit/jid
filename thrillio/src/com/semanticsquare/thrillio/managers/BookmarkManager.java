@@ -1,11 +1,14 @@
 package com.semanticsquare.thrillio.managers;
 
+import com.semanticsquare.thrillio.dao.BookmarkDao;
 import com.semanticsquare.thrillio.entities.Book;
+import com.semanticsquare.thrillio.entities.Bookmark;
 import com.semanticsquare.thrillio.entities.Movie;
 import com.semanticsquare.thrillio.entities.WebLink;
 
 public class BookmarkManager {
 	private static BookmarkManager instance = new BookmarkManager();
+	private static BookmarkDao dao = new BookmarkDao();
 
 	private BookmarkManager() {
 	}
@@ -24,8 +27,8 @@ public class BookmarkManager {
 		return webLink;
 	}
 
-	public Movie createMovie(long id, String title, String profileUrl, int releaseYear, String[] cast, String[] directors, String genre,
-			double imdbRating) {
+	public Movie createMovie(long id, String title, String profileUrl, int releaseYear, String[] cast,
+			String[] directors, String genre, double imdbRating) {
 		Movie movie = new Movie();
 		movie.setId(id);
 		movie.setTitle(title);
@@ -52,5 +55,9 @@ public class BookmarkManager {
 		book.setAmazonRating(amazonRating);
 
 		return book;
+	}
+
+	public Bookmark[][] getBookmarks() {
+		return dao.getBookmarks();
 	}
 }

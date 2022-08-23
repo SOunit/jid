@@ -1,10 +1,12 @@
 package com.semanticsquare.thrillio.managers;
 
+import com.semanticsquare.thrillio.dao.UserDao;
 import com.semanticsquare.thrillio.entities.User;
 
 public class UserManager {
 	// 3. initiate instance
 	private static UserManager instance = new UserManager();
+	private static UserDao dao = new UserDao();
 
 	// create a singleton
 	// 1. make private constructor to ban creating instance
@@ -30,5 +32,9 @@ public class UserManager {
 		user.setUserType(userType);
 
 		return user;
+	}
+
+	public User[] getUsers() {
+		return dao.getUsers();
 	}
 }
