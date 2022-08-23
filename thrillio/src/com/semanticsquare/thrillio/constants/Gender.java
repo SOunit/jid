@@ -1,7 +1,7 @@
 package com.semanticsquare.thrillio.constants;
 
-public class Genre {
-	private Genre() {
+public class Gender {
+	private Gender() {
 
 	}
 

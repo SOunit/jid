@@ -14,19 +14,18 @@ public class BookmarkManager {
 		return instance;
 	}
 
-	public WebLink createWebLink(long id, String title, String profileUrl, String url, String host) {
+	public WebLink createWebLink(long id, String title, String url, String host) {
 		WebLink webLink = new WebLink();
 		webLink.setId(id);
 		webLink.setTitle(title);
-		webLink.setProfileUrl(profileUrl);
 		webLink.setUrl(url);
 		webLink.setHost(host);
 
 		return webLink;
 	}
 
-	public Movie createMovie(long id, String title, String profileUrl, int releaseYear, String[] cast,
-			String[] directors, String genre, double imdbRating) {
+	public Movie createMovie(long id, String title, String profileUrl, int releaseYear, String[] cast, String[] directors, String genre,
+			double imdbRating) {
 		Movie movie = new Movie();
 		movie.setId(id);
 		movie.setTitle(title);
